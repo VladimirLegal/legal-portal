@@ -1,0 +1,13 @@
+# server
+server/node_modules
+server/.env
+
+# client
+client/node_modules
+client/.env.local
+client/.env.development.local
+
+# Общие
+.DS_Store
+dist
+*.log
