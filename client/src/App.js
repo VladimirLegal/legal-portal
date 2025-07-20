@@ -1,21 +1,15 @@
-// client/src/App.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DocumentWizard from './components/DocumentWizard';
+import HomePage from './pages/HomePage';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/test')
-      .then(response => setMessage(response.data.message))
-      .catch(error => console.error(error));
-  }, []);
-
   return (
-    <div>
-      <h1>Юридический портал</h1>
-      <p>Ответ сервера: {message}</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/generate" element={<DocumentWizard />} />
+      </Routes>
+    </Router>
   );
 }
 
