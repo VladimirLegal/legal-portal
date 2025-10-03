@@ -63,3 +63,41 @@ const generateSimplePDF = (data = {}) => {  // Добавлено значени
 };
 
 module.exports = { generateSimplePDF };
+// --- BEGIN: HTML -> PDF via Puppeteer ---
+// --- BEGIN: HTML -> PDF via Puppeteer (устойчивый запуск на Windows) ---
+const puppeteer = require('puppeteer');
+
+async function exportHtmlToPdfBuffer(html) {
+  // Тихие флаги для Windows/антивирусов
+  const launchOptions = {
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
+  };
+
+  // Если есть системный Chrome, Puppeteer может не скачать свой Chromium.
+  // Дадим возможность указать путь через переменную окружения.
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    launchOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+
+  const browser = await puppeteer.launch(launchOptions);
+  try {
+    const page = await browser.newPage();
+    // Гарантируем кодировку и базовые стили печати
+    await page.setContent(
+      String(html || ''),
+      { waitUntil: ['domcontentloaded', 'load', 'networkidle0'] }
+    );
+    const buffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '2cm', right: '1.5cm', bottom: '2cm', left: '3cm' },
+    });
+    return buffer;
+  } finally {
+    await browser.close();
+  }
+}
+
+module.exports.exportHtmlToPdfBuffer = exportHtmlToPdfBuffer;
+// --- END: HTML -> PDF via Puppeteer ---

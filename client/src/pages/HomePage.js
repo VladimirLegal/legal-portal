@@ -1,61 +1,86 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faHouse, faFileContract, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage = () => {
-  const location = useLocation();
-  const successMessage = location.state?.successMessage;
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">
-          Юридический портал по недвижимости
-        </h1>
+    <div className="min-h-screen bg-gray-50">
+      {/* Шапка с бургер-меню */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="text-xl font-bold text-blue-600">LegalPortal</div>
+          
+          {/* Бургер-меню */}
+          <button 
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-gray-600 hover:text-blue-600 focus:outline-none"
+          >
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </button>
+        </div>
         
-        {successMessage && (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-8">
-            {successMessage}
+        {/* Выпадающее меню */}
+        {menuOpen && (
+          <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
+            <Link to="/register" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">
+              Зарегистрироваться
+            </Link>
+            <Link to="/login" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">
+              Войти
+            </Link>
+            <Link to="/agreement" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">
+              Соглашение об обработке ПД
+            </Link>
+            <Link to="/about" className="block px-4 py-2 text-gray-800 hover:bg-blue-50">
+              О нас
+            </Link>
           </div>
         )}
+      </header>
+
+      {/* Основной контент */}
+      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          Юридические документы для сделок с недвижимостью
+        </h1>
         
-        <div className="bg-white rounded-xl shadow-md overflow-hidden p-6 md:p-8">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-700 mb-2">
-              Создайте юридический документ за 4 шага
-            </h2>
-            <p className="text-gray-600">
-              Профессиональные шаблоны для сделок с недвижимостью
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {/* Кнопка: Сдать/снять */}
+          <Link 
+            to="/property-type/rent" 
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center"
+          >
+            <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faHouse} className="text-blue-600 text-2xl" />
+            </div>
+            <h2 className="text-xl font-semibold mb-2">Сдать/снять</h2>
+            <p className="text-gray-600">Договоры аренды жилой и коммерческой недвижимости</p>
+          </Link>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <h3 className="font-semibold text-lg mb-2">Договоры</h3>
-              <p className="text-gray-600 text-sm">
-                Аренда, купля-продажа, дарение и другие
-              </p>
+          {/* Кнопка: Купить/продать */}
+          <Link 
+            to="/property-type/sale" 
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center"
+          >
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faHandshake} className="text-green-600 text-2xl" />
             </div>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <h3 className="font-semibold text-lg mb-2">Автозаполнение</h3>
-              <p className="text-gray-600 text-sm">
-                Быстрое заполнение данных из документов
-              </p>
-            </div>
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-              <h3 className="font-semibold text-lg mb-2">Юридически верно</h3>
-              <p className="text-gray-600 text-sm">
-                Актуальные шаблоны по законодательству РФ
-              </p>
-            </div>
-          </div>
+            <h2 className="text-xl font-semibold mb-2">Купить/продать</h2>
+            <p className="text-gray-600">Договоры купли-продажи недвижимости</p>
+          </Link>
           
-          <div className="text-center">
-            <Link 
-              to="/generate" 
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300"
-            >
-              Начать создание документа
-            </Link>
+          {/* Кнопка: Прочие документы */}
+          <div 
+            className="bg-white p-8 rounded-xl shadow-md flex flex-col items-center opacity-75 cursor-not-allowed"
+          >
+            <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+              <FontAwesomeIcon icon={faFileContract} className="text-gray-500 text-2xl" />
+            </div>
+            <h2 className="text-xl font-semibold mb-2">Прочие документы</h2>
+            <p className="text-gray-600">Доверенности, соглашения и другие документы</p>
           </div>
         </div>
       </div>

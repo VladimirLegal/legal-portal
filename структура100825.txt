@@ -1,0 +1,87 @@
+c:\legal-portal\
+c:\legal-portal\package-lock.json
+c:\legal-portal\package.json
+c:\legal-portal\.gitignore
+c:\legal-portal\client\
+c:\legal-portal\client\node_modules\
+c:\legal-portal\client\public\
+c:\legal-portal\client\public\templates\
+c:\legal-portal\client\public\index.html
+c:\legal-portal\client\public\manifest.json
+c:\legal-portal\client\public\robots.txt
+c:\legal-portal\client\public\templates\lease.txt
+c:\legal-portal\client\src\
+c:\legal-portal\client\src\components\
+c:\legal-portal\client\src\components\DocumentGenerator\
+c:\legal-portal\client\src\components\DocumentGenerator\ClauseEditor.jsx - есть внутри какой-то код, который не использовали)
+c:\legal-portal\client\src\components\DocumentGenerator\DocumentGenerator.jsx - есть внутри какой-то код, который не использовали)
+c:\legal-portal\client\src\components\DocumentGenerator\VariableHelper.jsx - есть внутри какой-то код, который не использовали)
+c:\legal-portal\client\src\components\InventorySection\
+c:\legal-portal\client\src\components\InventorySection\index.js
+c:\legal-portal\client\src\components\InventorySection\InventorySection.jsx
+c:\legal-portal\client\src\components\LandlordSection\
+c:\legal-portal\client\src\components\LandlordSection\index.js
+c:\legal-portal\client\src\components\LandlordSection\LandlordSection.jsx
+c:\legal-portal\client\src\components\LeaseTermsSection\
+c:\legal-portal\client\src\components\LeaseTermsSection\LeaseTermsSection.jsx
+c:\legal-portal\client\src\components\LeaseTermsSection\index.js
+c:\legal-portal\client\src\components\TenantSection\
+c:\legal-portal\client\src\components\TenantSection\TenantSection.jsx
+c:\legal-portal\client\src\components\TenantSection\index.js
+c:\legal-portal\client\src\components\RentApartmentWizard.js
+c:\legal-portal\client\src\components\Header.js
+c:\legal-portal\client\src\components\ErrorMessage.jsx
+c:\legal-portal\client\src\data\
+c:\legal-portal\client\src\data\bankDirectory.json
+c:\legal-portal\client\src\hooks\
+c:\legal-portal\client\src\hooks\useFormattedCurrency.js
+c:\legal-portal\client\src\pages\
+c:\legal-portal\client\src\pages\RegisterPage.js
+c:\legal-portal\client\src\pages\PropertyTypePage.js
+c:\legal-portal\client\src\pages\LoginPage.js
+c:\legal-portal\client\src\pages\HomePage.js
+c:\legal-portal\client\src\pages\DocumentEditorPage.js
+c:\legal-portal\client\src\pages\AgreementPage.js
+c:\legal-portal\client\src\pages\AboutPage.js
+c:\legal-portal\client\src\services\
+c:\legal-portal\client\src\services\templateService.js - есть какой-то код, но не знаю используется гдето или нет)
+c:\legal-portal\client\src\services\documentService.js - файл есть но пустой
+c:\legal-portal\client\src\templates\ - есть но не используется
+c:\legal-portal\client\src\utils\
+c:\legal-portal\client\src\utils\pdfGenerator.js
+c:\legal-portal\client\src\utils\grammarHelpers.js - пустой файл
+c:\legal-portal\client\src\utils\formatters.js
+c:\legal-portal\client\src\utils\extractEGRNDataFromPdf.js
+c:\legal-portal\client\src\utils\extractBankDetailsFromQR.js
+c:\legal-portal\client\src\utils\extractBankDetailsFromPdf.js
+c:\legal-portal\client\src\utils\documentFormatters.js
+c:\legal-portal\client\src\reportWebVitals.js
+c:\legal-portal\client\src\pdf.worker.js
+c:\legal-portal\client\src\index.js
+c:\legal-portal\client\src\index.css
+c:\legal-portal\client\src\App.js
+c:\legal-portal\client\src\App.css
+c:\legal-portal\client\tailwind.config.js
+c:\legal-portal\client\postcss.config.js
+c:\legal-portal\client\package-lock.json
+c:\legal-portal\client\package.json
+c:\legal-portal\client\.gitignore
+c:\legal-portal\node_modules\
+c:\legal-portal\server\
+c:\legal-portal\server\controllers\
+c:\legal-portal\server\fonts\
+c:\legal-portal\server\fonts\Roboto-Regular.ttf
+c:\legal-portal\server\models\
+c:\legal-portal\server\node_modules\
+c:\legal-portal\server\routes\
+c:\legal-portal\server\routes\documentRoutes.js
+c:\legal-portal\server\services\
+c:\legal-portal\server\services\pdfGenerator.js
+c:\legal-portal\server\temp\
+c:\legal-portal\server\templates\
+c:\legal-portal\server\package-lock.json
+c:\legal-portal\server\package.json
+c:\legal-portal\server\index.js
+c:\legal-portal\server\db.js
+c:\legal-portal\server\.env
+

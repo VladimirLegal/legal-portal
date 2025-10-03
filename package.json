@@ -9,5 +9,39 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  }
+  },
+  "dependencies": {
+    "@draft-js-plugins/editor": "^4.1.4",
+    "@draft-js-plugins/inline-toolbar": "^4.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "draft-js": "^0.11.7",
+    "handlebars": "^4.7.8",
+    "iconv-lite": "^0.6.3",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^2.16.105",
+    "pdfmake": "^0.2.20",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-hook-form": "^7.60.0",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^7.7.0",
+    "socket.io-client": "^4.8.1",
+    "use-undoable": "^5.0.0",
+    "xml2js": "^0.6.2"
+  },
+  "main": "convertXmlToBankDirectory.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladimirLegal/legal-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladimirLegal/legal-portal/issues"
+  },
+  "homepage": "https://github.com/VladimirLegal/legal-portal#readme",
+  "description": ""
 }

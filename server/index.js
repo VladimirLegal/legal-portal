@@ -1,15 +1,19 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
-const documentRoutes = require('./routes/documentRoutes'); // Убедитесь, что путь правильный
-
 const app = express();
+const path = require('path');
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+app.use('/temp', express.static(path.join(__dirname, 'temp')));
+
 
 // Разрешаем CORS
 app.use(cors());
 
 // Для обработки JSON в запросах
-app.use(express.json());
+const documentRoutes = require('./routes/documentRoutes');
+app.use('/api', documentRoutes);
 
 // Логгирование запросов
 app.use((req, res, next) => {
